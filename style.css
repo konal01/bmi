@@ -5,7 +5,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; 
+    height: 100vh; /* Full viewport height */
+}
 
 .btnbox {
     display: flex;
@@ -15,7 +16,7 @@ body {
     background-color: #8f8fcb;
     height: 400px;
     width: 300px;
-    border-radius: 40px;
+    border-radius: 20px;
     box-shadow: 
     inset 8px 6px 15px rgba(0, 0, 0, 0.3), 
      5px 5px 10px rgba(255, 255, 255, 0.2); 
@@ -60,7 +61,7 @@ span{
 .btnbox {
     background-color: #8f8fcb;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 40px;
     animation: wiggle 1.9s ease-in-out infinite; 
 }
 
