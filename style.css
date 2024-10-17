@@ -1,12 +1,11 @@
 body {
-    background-color: #b7b3cf;
+    background:rgb(199, 182, 255);
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
-}
+    height: 100vh; 
 
 .btnbox {
     display: flex;
@@ -18,8 +17,8 @@ body {
     width: 300px;
     border-radius: 40px;
     box-shadow: 
-    inset 8px 6px 15px rgba(0, 0, 0, 0.3), /* Outer shadow */
-     5px 5px 10px rgba(255, 255, 255, 0.2); /* Inner shadow */
+    inset 8px 6px 15px rgba(0, 0, 0, 0.3), 
+     5px 5px 10px rgba(255, 255, 255, 0.2); 
 }
 .calculate {
     display: flex;
@@ -55,4 +54,21 @@ span{
     margin:30px;
     margin-top:0px;
     transform:scale(1.2);
+}
+
+
+.btnbox {
+    background-color: #8f8fcb;
+    padding: 20px;
+    border-radius: 10px;
+    animation: wiggle 1.9s ease-in-out infinite; 
+}
+
+@keyframes wiggle {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(2px, -2px); }
+    40% { transform: translate(-2px, 2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(-2px, -2px); }
+    100% { transform: translate(0, 0); }
 }
