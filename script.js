@@ -1,32 +1,32 @@
 const weighte = document.getElementsByClassName("weight");
 const heighte = document.getElementsByClassName("height");
-const calculateButton = document.querySelector(".calculate"); // Corrected selector
-const bmiResult = document.getElementById("bmiResult"); // Element to display BMI
-const uon = document.getElementById("uon"); // Element to display BMI
+const calculateButton = document.querySelector(".calculate"); 
+const bmiResult = document.getElementById("bmiResult"); 
+const uon = document.getElementById("uon"); 
 
 calculateButton.addEventListener("click", function() {
     if (weighte.length > 0 && heighte.length > 0) {
-        const weight = weighte[0].value;
-        const height = heighte[0].value; // Use the correct variable
+        const weight = parseFloat(weighte[0].value); 
+        const height = parseFloat(heighte[0].value); t
 
         console.log("Weight:", weight);
         console.log("Height:", height);
 
-        if (weight && height) {
-            const heightInMeters = height / 100; // Convert height to meters
-            const bmi = weight / (heightInMeters * heightInMeters); // Calculate BMI
-            bmiResult.textContent = `Your BMI is: ${bmi.toFixed(2)}`; // Display BMI in the HTML
-            if (bmiResult<18.5){
-                uon.textContent = 'underweight niQQa' ;
+        if (!isNaN(weight) && !isNaN(height) && weight > 0 && height > 0) { 
+            const heightInMeters = height / 100; 
+            const bmi = weight / (heightInMeters * heightInMeters); 
+            bmiResult.textContent = `Your BMI is: ${bmi.toFixed(2)}`; 
+
+            
+            if (bmi < 18.5) {
+                uon.textContent = 'Underweight';
+            } else if (bmi >= 18.5 && bmi < 25) {
+                uon.textContent = 'Normal weight';
+            } else {
+                uon.textContent = 'Obese';
             }
-            else if (bmiResult>=18.5 && bmiResult<25){
-                uon.textContent = 'normal'
-            }
-            else {
-                uon.textContent = 'you fckin obese WHALE'
-            }
-                } else {
-            bmiResult.textContent = "Please enter valid weight and height."; // Display error message
+        } else {
+            bmiResult.textContent = "Please enter valid weight and height."; 
         }
     }
 });
